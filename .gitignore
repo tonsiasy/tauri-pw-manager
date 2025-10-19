@@ -11,3 +11,24 @@ build/
 # js
 node_modules/
 package-lock.json
+
+# macOS specific
+.DS_Store
+*.dmg
+*.app
+
+# Build artifacts
+src-tauri/target/
+dist/
+ui/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/

@@ -1,11 +1,11 @@
 [build]
-beforeDevCommand = "npm run --silent dev"
+beforeDevCommand = "pnpm run --silent dev"
 devPath = "http://127.0.0.1:3000"
-beforeBuildCommand = "npm run --silent build"
+beforeBuildCommand = "pnpm run --silent build"
 distDir = "./ui/build"
 
 [package]
-productName = "pw-manager"
+productName = "Password Manager"
 version = "0.1.0"
 
 [tauri.allowlist.window]
@@ -19,7 +19,8 @@ decorations = false
 transparent = true
 
 [tauri.bundle]
-identifier = "tauri.pw.manager"
+identifier = "com.tauri.pw-manager"
+active = true
 targets = "all"
 icon = [
   "assets/32x32.png",
@@ -28,3 +29,20 @@ icon = [
   "assets/icon.icns",
   "assets/icon.ico"
 ]
+resources = []
+copyright = ""
+category = "Utility"
+shortDescription = "Secure password manager"
+longDescription = "A secure desktop password manager with strong encryption"
+
+[tauri.bundle.macOS]
+frameworks = []
+minimumSystemVersion = "10.13"
+
+[tauri.bundle.windows]
+certificateThumbprint = ""
+digestAlgorithm = "sha256"
+timestampUrl = ""
+
+[tauri.bundle.deb]
+depends = []

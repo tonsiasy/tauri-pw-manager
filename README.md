@@ -6,11 +6,33 @@ A desktop password manager using Tauri, with a backend in Rust and a frontend in
 ## Cryptography architecture
 ![cryptography architecture](./assets/crypto-architecture.png)
 
-## usage
-Assumes you have the [Rust toolchain](https://rustup.rs/) and [npm](https://www.npmjs.com/) installed.
+## Usage
+
+### Prerequisites
+- [Rust toolchain](https://rustup.rs/)
+- Node.js 18.5.0 (or use [Volta](https://volta.sh/))
+- [pnpm](https://pnpm.io/)
+
+### Development
 
 ```bash
-npm run setup      # install dependencies
-cargo tauri dev    # run the app in development mode
-cargo tauri build  # build a release version of the app
+pnpm run setup       # Install dependencies (first time only)
+cargo tauri dev      # Run the app in development mode
+# or
+pnpm run tauri:dev
 ```
+
+### Building for Production
+
+```bash
+cargo tauri build    # Build release version with installers
+# or
+pnpm run tauri:build
+```
+
+The built installers will be in `src-tauri/target/release/bundle/`:
+- **macOS**: `.dmg` and `.app` files
+- **Windows**: `.msi` and `.exe` installers
+- **Linux**: `.deb` and `.AppImage` packages
+
+For detailed build instructions, platform-specific requirements, and troubleshooting, see [BUILD.md](BUILD.md).

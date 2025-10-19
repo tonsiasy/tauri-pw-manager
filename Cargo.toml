@@ -1,7 +1,10 @@
 [package]
 name = "pw-manager"
 version = "0.1.0"
+description = "A secure desktop password manager with strong encryption"
 authors = ["Axel Lindeberg"]
+license = "MIT"
+repository = "https://github.com/tonsiasy/tauri-pw-manager"
 default-run = "pw-manager"
 edition = "2021"
 
