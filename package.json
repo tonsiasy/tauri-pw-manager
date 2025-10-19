@@ -1,6 +1,6 @@
 {
   "name": "tauri-pw-manager",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A secure desktop password manager",
   "author": "Axel Lindeberg",
   "license": "MIT",
