@@ -67,11 +67,34 @@ export function StartPage() {
 
   return <>
     <Stack height='100vh' alignItems='center' bgcolor='#282a36' borderRadius='10px' border='2px solid #404353'>
-      <Typography variant='h5' marginTop='2rem'>Credentials</Typography>
-      <Stack margin='auto' spacing={1} alignItems='center'>
+      <Typography variant='h5' marginTop='2rem' marginBottom='1rem'>Credentials</Typography>
+      <Stack
+        spacing={1}
+        alignItems='center'
+        sx={{
+          width: '100%',
+          flex: 1,
+          overflowY: 'auto',
+          paddingBottom: '2rem',
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: '#1e1f29',
+            borderRadius: '10px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: '#404353',
+            borderRadius: '10px',
+            '&:hover': {
+              background: '#4a4e5e',
+            },
+          },
+        }}
+      >
         {credentials.length > 0
           ? credentials.sort().map(name =>
-            <Paper sx={{ width: '30rem', display: 'flex', padding: '0.5rem 1rem' }} elevation={4}>
+            <Paper key={name} sx={{ width: '30rem', display: 'flex', padding: '0.5rem 1rem' }} elevation={4}>
               <Typography alignSelf='center' flexGrow={1}>{name}</Typography>
               <Tooltip title='copy username'>
                 <IconButton children={<Person/>} onClick={() => copyValue(name, 'username')}/>
@@ -87,7 +110,7 @@ export function StartPage() {
               </Tooltip>
             </Paper>
           )
-          : "Press the '+' button to add credentials"
+          : <Typography sx={{ marginTop: '2rem' }}>Press the '+' button to add credentials</Typography>
         }
       </Stack>
     </Stack>
